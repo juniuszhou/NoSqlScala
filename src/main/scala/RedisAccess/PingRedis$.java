@@ -1,5 +1,3 @@
-package main.scala
-
 /**
  * Created by junius on 5/12/15.
  */
