@@ -1,0 +1,26 @@
+#### start stop Mongo
+mongod --config config_file_path
+
+config file like.
+port=1234
+dbpath=
+logpath=log/mongod.log
+
+
+
+
+#### database level
+show dbs
+use database1   // if database1 not exist, create it automatically.
+
+
+
+
+#### table level or collection level.
+db.createCollection("table_name")
+
+
+
+##### record or document level
+
+
