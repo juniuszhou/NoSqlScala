@@ -10,6 +10,7 @@ object PingRedis {
     // launch command set and del in parallel
     val s = redis.set("redis", "is awesome")
     val d = redis.del("i")
+
     for {
       set <- s
       del <- d

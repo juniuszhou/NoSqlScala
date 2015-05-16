@@ -1,18 +1,19 @@
 #### start stop Mongo
 mongod --config config_file_path
 
+// start client
+mongo ip:port
+
 config file like.
 port=1234
-dbpath=
+dbpath=data/
 logpath=log/mongod.log
-
-
-
 
 #### database level
 show dbs
 use database1   // if database1 not exist, create it automatically.
 
+show tables or show collections
 
 
 
@@ -21,6 +22,35 @@ db.createCollection("table_name")
 
 
 
+
 ##### record or document level
+db.database1_table1.find()
+db.database1_table1.find({x:1})
+db.database1_table1.find({x:1,z:3})
+
+// the same. use "" or not.
+db.database1_table1.insert({"x":1})
+db.database1_table1.insert({x:1})
+db.database1_table1.insert({x:1,y:2,z:3})
+
+// delete document
+db.database1_table1.remove({x:2})
+
+//other ops count/sort/limit/skip
+
+
+//batch ops
+for(var i=0;i<10;i++){db.database1_table1.insert({j:i})}
+
+
+
+#### Index Index Index
+db.system.indexes.find()  // show index
+
+db.database1_table1.ensureIndex({x:1}) // add index
+
+db.database1_table1.ensureIndex({x:1,y:1}) // combined index
+
+
 
 
