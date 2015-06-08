@@ -1,0 +1,5 @@
+#### http://redis.io/topics/latency
+redis provide slow log for analysis.
+strace help to find out why latency.
+
+
