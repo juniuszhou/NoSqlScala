@@ -1,14 +1,3 @@
-#### start stop Mongo
-mongod --config config_file_path
-
-// start client
-mongo ip:port
-
-config file like.
-port=1234
-dbpath=data/
-logpath=log/mongod.log
-
 #### database level
 show dbs
 use database1   // if database1 not exist, create it automatically.
@@ -50,7 +39,3 @@ db.system.indexes.find()  // show index
 db.database1_table1.ensureIndex({x:1}) // add index
 
 db.database1_table1.ensureIndex({x:1,y:1}) // combined index
-
-
-
-

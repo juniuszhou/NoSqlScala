@@ -24,3 +24,11 @@ In the example below the behaviour will be to save:
 
 AOF and RDB persistence can be enabled at the same time without problems.
 
+#### master and slave
+just configure the slaveof 192.168.133.139 6379 for each slave of redis. give master's ip and port
+also unbind 127.0.0.1
+
+
+#### backup
+redis-cli save
+then you can copy the rdb file from data directory.
