@@ -19,7 +19,10 @@ WATCH is implemented in CAS.
 redis-benchmark -q -n 100000
 
 
+#### redis sentinel
+it is a tool for HA provide by redis itself.
 
-
-
+#### pipeline
+for improve the efficiency of batch read/write. we can use pipeline to
+put lots of commands in. then use pipeline.sync method to do read job.
 

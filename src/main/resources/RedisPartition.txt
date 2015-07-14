@@ -1,0 +1,12 @@
+#### Partition
+1. criteria, scope partition or consistency hash partition.
+2. implementation. proxy or query routing.
+
+## proxy solution for redis partition.
+twemproxy (pronounced "two-em-proxy") is solution for redis partition.
+https://github.com/twitter/twemproxy
+
+Redis cluster  mix between query routing and client side partitioning
+webpage for Redis cluster.
+http://redis.io/topics/cluster-tutorial
+

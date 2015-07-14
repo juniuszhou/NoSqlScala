@@ -1,0 +1,50 @@
+####  http://docs.mongodb.org/manual/core/introduction/
+
+
+
+
+
+#### replication
+replication is process to sync data across multiple servers.
+replication can increase the read/write ability, recover from failover.
+but need additional space for storage.
+
+replica set is group of mongod instances host the same data.
+the primary always do the write operations. just one primary in each replica set.
+
+## concept operation log.
+the primary will record all update / write in operation log.
+the secondary copy operation log then apply to its data copy.
+
+## election of primary
+if current primary is down, or at the begin of mongo start.
+need decide which one is primary.
+arbiter is component which not include any data but just involve the election.
+so whole elector number can't be even, we always can get new leader.
+
+
+
+#### Shard
+
+
+#### Index
+mongo db index is similar to other database, use B-tree.
+
+#### write protocol.
+it is based on tcp/ip and just include message head and data with bson format.
+
+#### db file location and format.
+the default path is /data/db.
+for each db named like foo. then there is foo.ns, foo.1, foo.2 data files.
+and foo.n+1 will be the double size of foo.n
+
+mongo use pre-assign for file space. fill all empty part as zero.
+
+foo.ns to store meta data like name space for collection, index.
+
+
+#### file map to memory
+mongo map all data file to memory. need huge virtual memory.
+mongo can't control the order of write to disc.
+
+

@@ -31,6 +31,12 @@ db.database1_table1.remove({x:2})
 //batch ops
 for(var i=0;i<10;i++){db.database1_table1.insert({j:i})}
 
+#### update or insert
+// update name where id is 1. just update one no insert if existing
+db.classes.update({id:1},{$set:{"name":"zhoujun"}})
+
+//
+
 
 
 #### Index Index Index
@@ -39,3 +45,19 @@ db.system.indexes.find()  // show index
 db.database1_table1.ensureIndex({x:1}) // add index
 
 db.database1_table1.ensureIndex({x:1,y:1}) // combined index
+
+// avoid the lock from create index in front end.
+db.database1_table1.ensureIndex({x:1}, {background:1}) // add index at background
+
+
+
+#### aggregate and map reduce
+db.test1.aggregate
+db.test1.mapReduce
+
+
+#### database status check.
+db.serverStatus() db.currentOp()  //for client
+mongotop mongostat  // for command line.
+
+

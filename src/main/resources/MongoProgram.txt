@@ -1,0 +1,4 @@
+#### lib
+1. mongoose is a DSL for access to mongo. and its methods are similar to direct
+command in mongo client.
+

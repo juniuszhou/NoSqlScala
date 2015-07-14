@@ -1,3 +1,5 @@
+#### Mongo is developed in C++.
+
 #### start stop Mongo
 mongod --config config_file_path
 
