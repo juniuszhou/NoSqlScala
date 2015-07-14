@@ -1,0 +1,54 @@
+Redis cluster  mix between query routing and client side partitioning
+webpage for Redis cluster.
+http://redis.io/topics/cluster-tutorial
+
+
+1. two ports one for client other for data. gap is fixed as 10000.
+   data port in each node is part of cluster bus.
+   binary protocol for failure detection, configuration update, authorization and so on.
+
+2. algorithm, not consistent hashing, use hash slot. There are 16384 hash slots
+   how to get slot, get key CRC code then mode with 16384.
+   each node responsible for a subset of hash slots.
+
+
+#### master slave
+1. each hash slot can have one master and more than one slave.
+
+
+#### consistency between master and slave.
+because of delay of master to propagate the write change to slaves.
+so the state between master and slave may be different. if master clash and
+the slave not sync the new change. then change may be lost.
+
+#### how to enable cluster
+in configure file, set cluster-enabled <yes/no>
+
+
+
+
+####  http://redis.io/topics/cluster-spec more details about redis cluster
+max cluster about 1000 nodes since it use 16384 as hash key.
+
+just one database in cluster mode. so select command is unavailable.
+
+## hash tags can keep the some keys store in the same node as app.
+   if two key are different, then you can' control its hash slot.
+   so to control the hash code, redis in cluster mode use the string in {}
+   to compute hash code. so a{a} and b{a} must has the same hash code.
+   Question, it can get the effect of aggregation but not complete locality.
+
+
+
+
+## Redis cluster bus for detect other node, find out dead node and sync data slave/master.
+
+## write safety. redis use last elected master data set to replace all other data source.
+  don't support merge data, so it is efficient but safety is limited.
+
+
+
+
+
+
+## sub/pub works at cluster mode.

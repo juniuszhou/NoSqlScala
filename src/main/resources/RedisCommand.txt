@@ -1,0 +1,61 @@
+##### Redis basic operation
+http://doc.redisfans.com/
+
+## kill old process to occupy this port.
+kill -9 $(netstat -tlnp|grep 6379|awk '{print $7}'|awk -F '/' '{print $1}')
+
+in vm, you need run sudo redis-server redis.conf to increase resource.
+redis-server redis.conf
+redis-cli shutdown
+
+#### connect to remote server
+redis-cli -h insights-test.v39e76.0001.usw2.cache.amazonaws.com
+
+
+
+#### ops for key
+keys *        // all
+keys summary*  // start with summary
+keys s?3       // s + any character + 3
+del summary
+flushall // delete all keys
+
+#### Hash
+hkeys summary-1443   // summary-1443 is hash table, get all keys.
+hget summary-1443 dl-20150609-price   // get price field
+hmget summary-1443 dl-20150609-price  dl-20150609-room-type // get price and root type field
+
+hgetall summary-1443 // this function will return a map. the key is filed name and value is a json object.
+
+#### String
+append/set/get/
+set zhou jun   // set key zhou value jun
+append zhou .zhou // get key zhou value jun.zhou
+get zhou   // get the zhou ' value
+
+setnx // nx for not exist,  set just for not exist case
+
+## List two-direction
+rpush/lpush/lrange/llen/lpop/rpop
+
+incr and decr is atomic operation in redis.
+expire/ttl to set/get variable 's expiration time.
+
+## Set
+sadd/srem/smembers/sunion/
+
+## Sorted Set
+zadd/zrange/
+
+
+
+
+
+#### expire and ttl
+expire zhou 10 // set the expiration time for data, unit is second
+ttl    // check the live time left
+
+
+#### find out key slot hash slot    http://redis.io/commands/cluster-keyslot
+CLUSTER KEYSLOT somekey
+11058

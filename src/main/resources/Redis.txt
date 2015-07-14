@@ -1,0 +1,28 @@
+# NoSqlScala
+https://github.com/etaty/rediscala project of access redis via scala.
+#### Redis
+Redis is single threaded so an individual command is always atomic.
+
+
+##### Redis installation
+config/compile/install
+
+
+##### Transaction and Redis not support rollback. Watch
+ensures no other clients are executing commands in between.
+
+WATCH is implemented in CAS.
+
+
+
+##### Benchmake test to see how fast the redis
+redis-benchmark -q -n 100000
+
+
+#### redis sentinel
+it is a tool for HA provide by redis itself.
+
+#### pipeline
+for improve the efficiency of batch read/write. we can use pipeline to
+put lots of commands in. then use pipeline.sync method to do read job.
+

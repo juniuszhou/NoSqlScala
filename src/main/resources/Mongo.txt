@@ -1,0 +1,18 @@
+#### Mongo is developed in C++.
+
+#### start stop Mongo
+mongod --config config_file_path
+
+// start client
+mongo ip:port
+
+config file like.
+port=1234
+dbpath=data/
+logpath=log/mongod.log
+
+
+
+
+
+

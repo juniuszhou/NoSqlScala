@@ -1,0 +1,36 @@
+####  http://blog.csdn.net/yiqijinbu/article/details/9053467
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### lock
+mongo use read-write lock.
+mongo just provide db level lock. traditional db provide record level lock.
+
+
+#### transaction
+document level.
+
+
+
+#### problems
+1. how to store tree type data structure is a challenge.
+a lot of ways to create, depend on the frequencies of different ops.
+
+2. create index brings lock and long-time wait
+create index in background.
+
+3. map reduce of mongo db is slow. it is ok for some background process.
+
+
+
