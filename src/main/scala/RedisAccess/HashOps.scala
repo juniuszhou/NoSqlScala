@@ -1,0 +1,5 @@
+package RedisAccess
+
+object HashOps {
+
+}
