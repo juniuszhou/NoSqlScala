@@ -1,0 +1,25 @@
+#### four types of NoSql db
+1. document mongo, sequoiaDB (from china company)
+2. memory Redis.
+3. column HBase, cassandra, Dynamo (from Amazon)
+4. graph. Neo4j
+
+
+
+
+#### Mongo VS Cassandra
+Mongo not good at write because of its global lock mechanism.
+
+
+
+
+#### a paper to compare different db. http://msrg.utoronto.ca/papers/NoSQLBenchmark
+or its chinese version in csdn http://www.csdn.net/article/2014-12-09/2823026
+
+we can see mongo for read is the best.
+
+
+
+#### a picture to show all.
+http://www.cnblogs.com/me115/p/3829115.html
+

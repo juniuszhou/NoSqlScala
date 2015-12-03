@@ -1,0 +1,21 @@
+#### http://docs.datastax.com/en/cql/3.0/cql/cql_reference/cqlCommandsTOC.html
+
+## keyspaces
+DESCRIBE keyspaces;  // list all key spaces
+USE keyspace; // use a specific keyspace.
+
+create keyspace test WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+
+## table or column family
+DESCRIBE tables  // list all tables
+
+//create, insert and select
+CREATE TABLE users (
+        ...   user_name varchar PRIMARY KEY,
+        ...   password varchar)
+        ... ;
+
+insert into users(user_name, password) values('zhou', 'jun') ;
+select * from users;
+
+

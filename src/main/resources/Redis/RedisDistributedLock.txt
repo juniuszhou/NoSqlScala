@@ -1,0 +1,2 @@
+#### good like to explain how redis implement lock.
+http://redis.io/topics/distlock

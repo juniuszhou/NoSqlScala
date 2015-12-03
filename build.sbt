@@ -17,3 +17,5 @@ libraryDependencies += "org.mongodb" %% "casbah" % "2.8.1"
 libraryDependencies += "org.slf4j" % "slf4j-log4j12" % "1.7.12"
 
 libraryDependencies += "redis.clients" % "jedis" % "2.7.2"
+
+libraryDependencies += "org.apache.hbase" % "hbase-client" % "1.1.1"

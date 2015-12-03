@@ -1,0 +1,9 @@
+#### Cassandra combine the key/value from Dynamo and Bigtable 's column storage.
+we can take it as 4-5 dimension hash table.
+1. column  three data tuple, name/value/timestamp.
+2. super column. name and value, value includes several columns.
+A super column is a special column, therefore, it is also a key-value pair.
+But a super column stores a map of sub-columns.
+3. column family. like table in RDBMS. two types standard and super.
+4. keyspace.
+

@@ -21,6 +21,8 @@ mongo just provide db level lock. traditional db provide record level lock.
 #### transaction
 document level.
 
+#### write concern
+
 
 
 #### problems
@@ -31,6 +33,14 @@ a lot of ways to create, depend on the frequencies of different ops.
 create index in background.
 
 3. map reduce of mongo db is slow. it is ok for some background process.
+https://sysdig.com/mongodb-showdown-aggregate-vs-map-reduce/
+http://docs.mongodb.org/manual/core/map-reduce-concurrency/
+
+map reduce depends on the v8 java script engine. so multiple java scripts
+run at the same time after 2.4. the java script engine of mongo became v8.
+
+
+
 
 
 

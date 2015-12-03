@@ -1,6 +1,6 @@
 package MongoAccess
 
-import com.mongodb.WriteResult
+import com.mongodb.{WriteConcern, WriteResult}
 import com.mongodb.casbah.commons.MongoDBObject
 
 object BasicOps{
@@ -11,6 +11,17 @@ object BasicOps{
     def insert() = {
       val a = MongoDBObject("x" -> 1)
       // error got via throw exception from insert operation
+      val res: WriteResult = coll.insert(a)
+      val error = res.getN
+      println("if error",error.toString)
+      println("insert result is ", res)
+    }
+
+    def insertWithConcern() = {
+      val a = MongoDBObject("x" -> 1)
+      // error got via throw exception from insert operation
+      // write 2 times, 2 seconds timeout, fsync and journal.
+      val concern = new WriteConcern(2, 2, true, true)
       val res: WriteResult = coll.insert(a)
       val error = res.getN
       println("if error",error.toString)

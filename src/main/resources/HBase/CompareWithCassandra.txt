@@ -1,0 +1,5 @@
+#### consistent model
+HBase provide eventual consistency. so the write is faster than Cassandra.
+
+Cassandra give strong consistency. write is slow. but read is faster.
+
